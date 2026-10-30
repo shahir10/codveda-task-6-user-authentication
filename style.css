@@ -1,0 +1,361 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #287c73;
+    --primary-dark: #20665f;
+    --background: #f3f7f6;
+    --surface: #ffffff;
+    --text: #202e32;
+    --muted: #879497;
+    --border: #e5ecea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+}
+
+.auth-wrapper {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    min-height: 100vh;
+    padding: 22px;
+    gap: 22px;
+}
+
+/* Welcome section */
+
+.welcome-panel {
+    background: #183f3c;
+    color: white;
+    border-radius: 22px;
+    padding: 45px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-panel::before,
+.welcome-panel::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.welcome-panel::before {
+    width: 430px;
+    height: 430px;
+    right: -160px;
+    bottom: -130px;
+}
+
+.welcome-panel::after {
+    width: 300px;
+    height: 300px;
+    right: -95px;
+    bottom: -65px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+}
+
+.brand-icon {
+    width: 39px;
+    height: 39px;
+    border-radius: 12px;
+    background: #6ac1ad;
+    color: #183f3c;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.welcome-content {
+    max-width: 440px;
+    position: relative;
+    z-index: 1;
+    margin: 60px 0;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #65c1ad;
+    margin-bottom: 15px;
+}
+
+.welcome-content h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.18;
+    letter-spacing: -1.7px;
+    margin-bottom: 20px;
+}
+
+.welcome-content p:last-child {
+    color: #bfd2ce;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.welcome-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #bfd2ce;
+    font-size: 11px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6ac1ad;
+}
+
+/* Form section */
+
+.form-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    padding: 45px 30px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 440px;
+}
+
+.form-heading {
+    margin-bottom: 20px;
+}
+
+.form-heading .eyebrow {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.form-heading h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.form-heading > p:last-child {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Forms */
+
+#registerForm,
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+#registerForm {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #46565a;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    background: #fafcfb;
+    border-radius: 9px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--text);
+    transition: 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(40, 124, 115, 0.09);
+}
+
+.form-group input::placeholder {
+    color: #aab5b4;
+}
+
+/* Buttons */
+
+#registerForm button,
+#loginForm button,
+#profileSection button {
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary);
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#registerForm button:hover,
+#loginForm button:hover,
+#profileSection button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Form feedback */
+
+.message {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--primary);
+    overflow-wrap: anywhere;
+}
+
+.login-heading {
+    margin-bottom: 18px;
+}
+
+/* Profile section */
+
+#profileSection {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f2f8f6;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+#profileSection h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+#profileInfo {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* Security note */
+
+.security-note {
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.security-note:first-letter {
+    color: #35a27d;
+}
+
+/* Responsive design */
+
+@media (max-width: 900px) {
+    .auth-wrapper {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .welcome-panel {
+        min-height: 300px;
+        padding: 30px;
+    }
+
+    .welcome-content {
+        margin: 45px 0;
+    }
+
+    .welcome-content h1 {
+        font-size: 36px;
+    }
+
+    .form-panel {
+        padding: 40px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-wrapper {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .welcome-panel,
+    .form-panel {
+        border-radius: 15px;
+    }
+
+    .welcome-panel {
+        min-height: 260px;
+        padding: 25px;
+    }
+
+    .welcome-content {
+        margin: 35px 0;
+    }
+
+    .welcome-content h1 {
+        font-size: 30px;
+    }
+
+    .form-panel {
+        padding: 30px 18px;
+    }
+
+    .form-heading h2 {
+        font-size: 23px;
+    }
+}
